@@ -13,7 +13,6 @@ configurations {
 }
 
 group 'org.jboss.aerogear'
-version '2.0.2-SNAPSHOT'
 
 apply plugin: 'java'
 
@@ -26,6 +25,7 @@ repositories {
 ext {
     keycloakVersion=project.properties["keycloakVersion"]
     prometheusVersion=project.properties["prometheusVersion"]
+    version=project.properties["version"]
 }
 
 
@@ -55,7 +55,7 @@ jar {
             'Created-By'     : "Gradle ${gradle.gradleVersion}",
             'Build-Jdk'      : "${System.properties['java.version']} (${System.properties['java.vendor']} ${System.properties['java.vm.version']})",
             'Build-OS'       : "${System.properties['os.name']} ${System.properties['os.arch']} ${System.properties['os.version']}",
-            'Version'        : "${gradle.rootProject.version}"
+            'Version'        : version
         )
     }
 }
